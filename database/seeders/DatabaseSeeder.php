@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use Database\Seeders\Transactions\TransactionsSeeder;
+use Database\Seeders\Transactions\TransactionStatusesSeeder;
+use Database\Seeders\Users\UsersSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +16,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call(UsersSeeder::class);
+        $this->call(TransactionStatusesSeeder::class);
+        $this->call(TransactionsSeeder::class);
     }
 }
