@@ -22,5 +22,6 @@
     "Create Transaction" : "Подтвердить",
     "Select Date" : "Выберите дату",
     "Select Time" : "Выберите время",
-    "Request validation error." : "Ошибка заполнения формы:"
+    "Request validation error." : "Ошибка заполнения формы:",
+    "Latest Transactions" : "Последние переводы"
 }

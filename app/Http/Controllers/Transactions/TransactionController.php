@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Transactions\TransactionCreateRequest;
 use App\Http\Resources\Transactions\TransactionResource;
 use App\Http\Resources\Users\UserResource;
+use App\Http\Resources\Users\UserWithLatestTransactionResource;
 use App\Models\Transactions\TransactionStatus;
 use App\Models\Users\User;
 use App\Services\Transactions\TransactionService;
@@ -17,7 +18,6 @@ use Illuminate\Support\Facades\Validator;
 class TransactionController extends Controller
 {
     private UserService $userService;
-
     private TransactionService $transactionService;
 
     public function __construct()
@@ -55,6 +55,13 @@ class TransactionController extends Controller
         return view('transactions', [
             'users' => UserResource::collection($users),
             'transactions' => TransactionResource::collection($transactions)
+        ]);
+    }
+
+    public function latest() {
+        $users = $this->userService->getUsersWithLatestTransactions();
+        return view('transactions-latest', [
+            'users' => UserWithLatestTransactionResource::collection($users)
         ]);
     }
 }

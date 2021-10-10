@@ -22,6 +22,7 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('transactions')->group(function () {
         Route::get('/', [TransactionController::class, 'index'])->name('transactions');
         Route::post('/', [TransactionController::class, 'create'])->name('transactions.create');
+        Route::get('/latest', [TransactionController::class, 'latest'])->name('transactions.latest');
     });
 });
 

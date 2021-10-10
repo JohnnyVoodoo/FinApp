@@ -15,8 +15,11 @@
                 <!-- Navigation Links -->
                 @auth
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('transactions')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('transactions')" :active="request()->routeIs('transactions')">
                         {{ __('Transactions') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('transactions.latest')" :active="request()->routeIs('transactions.latest')">
+                        {{ __('Latest Transactions') }}
                     </x-nav-link>
                 </div>
                 @endauth

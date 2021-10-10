@@ -25,7 +25,7 @@ class TransactionFactory extends Factory
         return [
             'sender_id' => rand(1,5),
             'recipient_id' => rand(6,10),
-            'amount' => 100,
+            'amount' => rand(50, 250),
             'status_id' => rand(1,3),
             'transact_at' => now()->addHours(rand(1,10))->format('Y-d-m H:00:00'),
         ];
