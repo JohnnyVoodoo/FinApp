@@ -1,0 +1,19 @@
+{
+    "Log in": "Вход",
+    "Register": "Регистрация",
+    "Log out": "Выход",
+    "Name": "Имя",
+    "Email": "Электронная почта",
+    "Password": "Пароль",
+    "Confirm Password": "Подтверждение пароля",
+    "Remember me": "Запомнить меня",
+    "Forgot your password?": "Забыли пароль?",
+    "Already registered?": "Уже зарегистрированы?",
+    "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.": "Забыли свой пароль? Без проблем. Просто сообщите нам свой адрес электронной почты, и мы пришлем вам ссылку для сброса пароля, которая позволит вам выбрать новый.",
+    "Email Password Reset Link": "Отправить ссылку",
+    "Whoops! Something went wrong.": "Whoops! Что-то пошло не так...",
+    "Reset Password" : "Изменить пароль",
+    "Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another." : "Спасибо за регистрацию! Прежде чем начать, не могли бы вы подтвердить свой адрес электронной почты, щелкнув ссылку, которую мы только что отправили вам? Если вы не получили письмо, мы с радостью отправим вам другое.",
+    "A new verification link has been sent to the email address you provided during registration." : "На адрес электронной почты, который вы указали при регистрации, была отправлена новая ссылка для подтверждения.",
+    "Resend Verification Email" : "Отправить новую ссылку"
+}
