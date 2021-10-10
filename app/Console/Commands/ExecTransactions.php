@@ -27,6 +27,7 @@ class ExecTransactions extends Command
         $datetime = now()->format("Y-m-d H:00:00");
         $this->transactionRepository->transactAt($datetime)
             ->planned()
+            ->with(['sender', 'recipient'])
             ->chunk(10, function ($transactions) {
                 /** @var Transaction $transaction */
                 foreach ($transactions as $transaction) {

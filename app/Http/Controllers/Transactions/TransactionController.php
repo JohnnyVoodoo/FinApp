@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Transactions;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Transactions\TransactionCreateRequest;
+use App\Http\Resources\Transactions\TransactionResource;
+use App\Http\Resources\Users\UserResource;
 use App\Models\Transactions\TransactionStatus;
 use App\Models\Users\User;
 use App\Services\Transactions\TransactionService;
@@ -29,10 +31,12 @@ class TransactionController extends Controller
         /** @var User $user */
         $user = Auth::user();
         $users = $this->userService->getUsersExceptIDs([$user->id]);
-        $transactions = $this->userService->getTransactions($user);
+        $transactions = $this->userService->getTransactions($user, [
+            'sender', 'recipient', 'status'
+        ]);
         return view('transactions', [
-            'users' => $users,
-            'transactions' => $transactions
+            'users' => UserResource::collection($users),
+            'transactions' => TransactionResource::collection($transactions)
         ]);
     }
 
@@ -45,10 +49,12 @@ class TransactionController extends Controller
         $attributes['sender_id'] = $user->id;
         $this->transactionService->create($attributes);
         $users = $this->userService->getUsersExceptIDs([$user->id]);
-        $transactions = $this->userService->getTransactions($user);
+        $transactions = $this->userService->getTransactions($user, [
+            'sender', 'recipient', 'status'
+        ]);
         return view('transactions', [
-            'users' => $users,
-            'transactions' => $transactions
+            'users' => UserResource::collection($users),
+            'transactions' => TransactionResource::collection($transactions)
         ]);
     }
 }

@@ -5,6 +5,10 @@ namespace App\Models\Transactions;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property integer $id
+ * @property string $alias
+ */
 class TransactionStatus extends Model
 {
     protected $table = 'transaction_statuses';
@@ -15,5 +19,5 @@ class TransactionStatus extends Model
     const SUCCESS_STATUS_ID = 2;
     const REJECTED_STATUS_ID = 3;
 
-    protected $fillable = ['id', 'alias', 'title'];
+    protected $fillable = ['id', 'alias'];
 }

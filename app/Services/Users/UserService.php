@@ -28,9 +28,10 @@ class UserService
             ->get();
     }
 
-    public function getTransactions(User $user): EloquentCollection
+    public function getTransactions(User $user, array $with = []): EloquentCollection
     {
         return $user->transactions()
+            ->with($with)
             ->orderBy('transact_at', 'desc')
             ->get();
     }
