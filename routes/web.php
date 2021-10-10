@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Transactions\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('transactions')->group(function () {
+        Route::get('/', [TransactionController::class, 'index'])->name('transactions');
+        Route::post('/', [TransactionController::class, 'create'])->name('transactions.create');
+    });
+});
 
 require __DIR__.'/auth.php';
