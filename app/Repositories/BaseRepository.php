@@ -24,4 +24,13 @@ class BaseRepository {
         return $this->builder->get($columns);
     }
 
+    public function create(array $attributes) {
+        return $this->model->create($attributes);
+    }
+
+    public function chunk(int $count, callable $callback): bool
+    {
+        return $this->builder->chunk($count, $callback);
+    }
+
 }

@@ -26,7 +26,8 @@ class TransactionRepository extends BaseRepository
         return $this;
     }
 
-    public function create(array $attributes) {
-        return $this->model->create($attributes);
+    public function transactAt(string $datetime) {
+        $this->builder->where('transact_at', $datetime);
+        return $this;
     }
 }
