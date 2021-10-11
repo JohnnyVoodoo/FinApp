@@ -4,6 +4,7 @@
 - Клонировать репозиторий
 - ```shell cp .env.example .env```
 - заполнить `.env`
+- ```shell composer install```
 - ```shell php artisan key:generate```
 - ```shell php artisan migrate --seed```
 - ```shell npm run dev```
